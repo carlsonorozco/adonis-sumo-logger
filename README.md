@@ -1,6 +1,6 @@
-# AdonisJS SumoLogger :hash:
+# AdonisJS SumoLogger :page_facing_up:
 
-Adonis SumoLogger is a [Hashids](https://github.com/ivanakimov/hashids.js) Provider for AdonisJs framework.
+Adonis SumoLogger is a [SumoLogic](https://www.sumologic.com/) Driver Provider for AdonisJs Logger.
 
 [![npm version](https://badge.fury.io/js/adonis-sumo-logger.svg)](https://badge.fury.io/js/adonis-sumo-logger)
 [![npm](https://img.shields.io/npm/dt/adonis-sumo-logger.svg)](https://www.npmjs.com/package/adonis-sumo-logger)
@@ -18,7 +18,7 @@ Adonis SumoLogger is a [Hashids](https://github.com/ivanakimov/hashids.js) Provi
 
 ## Node/OS Target
 
-This repo/branch is supposed to run fine on all major OS platforms and targets `Node.js >=7.0`
+This repo/branch is supposed to run fine on all major OS platforms and targets `Node.js >=8.0`
 
 ## Installation
 
@@ -38,4 +38,4 @@ Thanks to the community of [AdonisJs](http://www.adonisjs.com/).
 
 ## Copyright and License
 
-Copyright (c) 2017 [Carlson Orozco](http://carlsonorozco.com/), [MIT](LICENSE.md) License
+Copyright (c) 2018 [Carlson Orozco](http://carlsonorozco.com/), [MIT](LICENSE.md) License
