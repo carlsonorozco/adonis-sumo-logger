@@ -1,6 +1,6 @@
 {
   "name": "adonis-sumo-logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Adonis SumoLogger is a SumoLogic Driver Provider for AdonisJs Logger",
   "homepage": "https://github.com/carlsonorozco/adonis-sumo-logger",
   "bugs": {
