@@ -31,7 +31,7 @@ Add new configuration inside logger module in config/app.js:
       interval: 0,
       sendErrors: true,
       clientUrl: Env.get('APP_URL'),
-      graphite: true
+      graphite: false
     }
 ```
 
