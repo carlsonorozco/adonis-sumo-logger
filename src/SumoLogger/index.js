@@ -11,19 +11,24 @@
 
 const _ = require('lodash')
 const Winston = require('winston')
+const Transport = require('winston-transport')
 const SumoLogger = require('sumo-logger')
 
-// class SumoLoggerTransport extends Winston.Transport {
-//   constructor (opts) {
-//     super(opts)
+class SumoLoggerTransport extends Transport {
+  constructor (opts) {
+    super(opts)
 
-//     this.SumoLogger = new SumoLogger(opts)
-//   }
+    this.SumoLogger = new SumoLogger(opts)
+  }
 
-//   log (level = '', msg = '', meta = {}, callback) {
-//     this.SumoLogger.log({ level, msg, meta })
-//   }
-// }
+  log (info, callback) {
+    setImmediate(() => {
+      this.emit('logged', info)
+    })
+
+    this.SumoLogger.log(info)
+  }
+}
 
 class WinstonSumoLogger {
   setConfig (config) {
@@ -37,12 +42,21 @@ class WinstonSumoLogger {
       timestamp: new Date().toLocaleTimeString()
     }, config)
 
+    const format = this.config.format || Winston.format.combine(
+      Winston.format.splat(),
+      Winston.format.simple()
+    )
+
+    delete this.config.format
+
     /**
      * Creating new instance of winston with file transport
      */
-    Winston.transports.SumoLogger = SumoLogger
+    Winston.transports.SumoLoggerTransport = SumoLoggerTransport
     this.logger = Winston.createLogger({
-      transports: [new Winston.transports.SumoLogger(this.config)]
+      format: format,
+      levels: this.levels,
+      transports: [new Winston.transports.SumoLoggerTransport(this.config)]
     })
 
     /**
@@ -79,7 +93,7 @@ class WinstonSumoLogger {
    * @return {String}
    */
   get level () {
-    return this.logger.transports[this.config.name].level
+    return this.logger.transports[0].level
   }
 
   /**
@@ -90,7 +104,7 @@ class WinstonSumoLogger {
    * @return {void}
    */
   set level (level) {
-    this.logger.transports[this.config.name].level = level
+    this.logger.transports[0].level = level
   }
 
   /**
