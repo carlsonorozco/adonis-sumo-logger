@@ -11,7 +11,7 @@
 
 const _ = require('lodash')
 const Winston = require('winston')
-const SumoLogger = require('sumo-logger')
+const { SumoLogic } = require('winston-sumologic-transport');
 
 class WinstonSumoLogger {
   setConfig (config) {
@@ -29,7 +29,7 @@ class WinstonSumoLogger {
      * Creating new instance of winston with file transport
      */
     this.logger = Winston.createLogger({
-      transports: [new Winston.transports.SumoLogger(this.config)]
+      transports: [new Winston.transports.SumoLogic(this.config)]
     })
 
     /**
