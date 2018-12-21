@@ -33,8 +33,8 @@
   },
   "dependencies": {
     "lodash": "^4.17.11",
-    "winston": "^3.1.0",
-    "winston-sumologic-transport": "^1.1.0"
+    "sumo-logger": "^2.0.1",
+    "winston": "^3.1.0"
   },
   "keywords": [
     "adonisjs",
