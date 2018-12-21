@@ -1,5 +1,8 @@
 # adonis-sumo-logger Changelog
 
+## 1.0.2
+ - Update packages
+
 ## 1.0.1
 - Add FOSSA badge
 
