@@ -27,6 +27,8 @@ class SumoLoggerTransport extends Transport {
     })
 
     this.SumoLogger.log(info)
+
+    callback()
   }
 }
 
