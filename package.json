@@ -10,6 +10,7 @@
   "author": "Carlson Orozco <carlsonorozco@gmail.com>",
   "scripts": {
     "lint": "standard",
+    "pretest": "npm run lint",
     "posttest": "npm run coverage",
     "test:local": "FORCE_COLOR=true node bin/index.js --local",
     "test": "snyk test && nyc npm run test:local",
