@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.11",
-    "sumo-logger": "^2.0.1",
+    "sumo-logger": "^2.5.4",
     "winston": "^3.1.0"
   },
   "keywords": [
